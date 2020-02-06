@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import cn.jzvd.JZVideoPlayer;
 
 public class MainActivity extends BaseActivity {
 
@@ -80,5 +81,11 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        JZVideoPlayer.releaseAllVideos();
     }
 }
