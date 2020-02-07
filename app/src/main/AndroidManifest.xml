@@ -31,6 +31,7 @@
 <!--            </intent-filter>-->
         </activity>
         <activity android:name=".business.login.UserRegisterActivity" />
+        <activity android:name=".business.VideoHistoryActivity"/>
 
 <!--        <provider-->
 <!--            android:name="cn.bmob.v3.util.BmobContentProvider"-->

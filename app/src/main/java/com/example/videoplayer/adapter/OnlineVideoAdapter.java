@@ -1,15 +1,15 @@
 package com.example.videoplayer.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 
 import com.bumptech.glide.Glide;
 import com.example.videoplayer.R;
+import com.example.videoplayer.db.VideoDao;
 import com.example.videoplayer.entity.VideoEntity;
+import com.example.videoplayer.view.MyViedeoPlayer;
 import com.zhuandian.base.BaseAdapter;
 import com.zhuandian.base.BaseViewHolder;
 
-import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,7 +23,7 @@ import cn.jzvd.JZVideoPlayerStandard;
  */
 public class OnlineVideoAdapter extends BaseAdapter<VideoEntity, BaseViewHolder> {
     @BindView(R.id.videoplayer)
-    JZVideoPlayerStandard jzVideoPlayerStandard;
+    MyViedeoPlayer myViedeoPlayer;
 
     public OnlineVideoAdapter(List<VideoEntity> mDatas, Context context) {
         super(mDatas, context);
@@ -38,11 +38,21 @@ public class OnlineVideoAdapter extends BaseAdapter<VideoEntity, BaseViewHolder>
     @Override
     protected void converData(BaseViewHolder myViewHolder, VideoEntity videoEntity, int position) {
         ButterKnife.bind(this, myViewHolder.itemView);
-        jzVideoPlayerStandard.setUp(videoEntity.getPath(),
+        myViedeoPlayer.setUp(videoEntity.getPath(),
                 JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,
                 videoEntity.getName());
         Glide.with(mContext).load(videoEntity.getThumbPath())
-                .into(jzVideoPlayerStandard.thumbImageView);
+                .into(myViedeoPlayer.thumbImageView);
+
+        myViedeoPlayer.setOnVideoPlayingListener(new MyViedeoPlayer.OnVideoPlayingListener() {
+            @Override
+            public void onVideoPlaying() {
+                VideoDao dao = VideoDao.getInstance(mContext);
+                dao.addVideo(videoEntity);
+            }
+        });
+
+
     }
 
     @Override

@@ -12,6 +12,15 @@ public class VideoEntity implements Serializable {
     private String thumbPath;
     private String duration;
     private String name;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
