@@ -12,33 +12,24 @@ import androidx.annotation.Nullable;
  * date：2020/02/07
  */
 public class DataBaseHelper extends SQLiteOpenHelper {
-    public static final String DB_NAME="history.db";
+    public static final String DB_NAME = "history.db";
+
     public DataBaseHelper(@Nullable Context context) {
-        super(context, DB_NAME, null, 2);
+        super(context, DB_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "create table if not exists video(" +
-                "id integer primary key autoincrement,"+
-                "path text,"+
-                "thumbPath text,"+
-                "duration text,"+
+                "id integer primary key autoincrement," +
+                "path text," +
+                "thumbPath text," +
+                "duration text," +
                 "name)";
         db.execSQL(sql);
-        System.out.println("-----------------------111------------------------");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "create table if not exists video(" +
-                "id integer primary key autoincrement,"+
-                "path text,"+
-                "thumbPath text,"+
-                "duration text,"+
-                "name)";
-        db.execSQL(sql);
-
-        System.out.println("-----------------------22222-----------------------");
     }
 }

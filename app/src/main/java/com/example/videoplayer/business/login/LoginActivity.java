@@ -36,7 +36,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void setUpView() {
-
+        setTitle("登录");
     }
 
 

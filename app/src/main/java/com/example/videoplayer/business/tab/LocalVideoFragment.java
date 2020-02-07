@@ -45,7 +45,7 @@ public class LocalVideoFragment extends BaseFragment {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            int hasCallPhonePermission = actitity.checkSelfPermission(Manifest.permission.CALL_PHONE);
+            int hasCallPhonePermission = actitity.checkSelfPermission(Manifest.permission.CAMERA);
             List<String> permissions = new ArrayList<String>();
             if (hasCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
                 permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);

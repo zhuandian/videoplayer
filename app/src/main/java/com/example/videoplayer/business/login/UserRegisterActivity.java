@@ -34,7 +34,7 @@ public class UserRegisterActivity extends BaseActivity {
 
     @Override
     protected void setUpView() {
-
+        setTitle("注册");
     }
 
 

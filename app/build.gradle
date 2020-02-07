@@ -57,4 +57,5 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.google.android.material:material:1.2.0-alpha04'
     implementation 'cn.jzvd:jiaozivideoplayer:6.2.12'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 }
