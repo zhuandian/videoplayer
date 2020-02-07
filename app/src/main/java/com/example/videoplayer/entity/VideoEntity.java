@@ -8,9 +8,9 @@ import java.io.Serializable;
  * date：2020/02/06
  */
 public class VideoEntity implements Serializable {
-   private String path;
-   private String thumbPath;
-   private String duration;
+    private String path;
+    private String thumbPath;
+    private String duration;
     private String name;
 
     public String getName() {
@@ -20,8 +20,6 @@ public class VideoEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
 
     public String getPath() {

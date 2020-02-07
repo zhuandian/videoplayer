@@ -26,10 +26,10 @@ public class MainActivity extends BaseActivity {
     ViewPager vpHome;
     @BindView(R.id.tab_bottom)
     BottomNavigationView tabBottom;
-    private static final int PAGE_HOME = 0;
-    private static final int PAGE_LOCAL_VIDEO = 1;
-    private static final int PAGE_ONLINE_VIDEO = 2;
-    private static final int PAGE_MY = 3;
+    public static final int PAGE_HOME = 0;
+    public static final int PAGE_LOCAL_VIDEO = 1;
+    public static final int PAGE_ONLINE_VIDEO = 2;
+    public static final int PAGE_MY = 3;
 
     @Override
     protected int getLayoutId() {
@@ -50,6 +50,9 @@ public class MainActivity extends BaseActivity {
         initBottomTab();
     }
 
+    public  void setCurrentPage(int position){
+        vpHome.setCurrentItem(position);
+    }
     private void initBottomTab() {
         vpHome.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
             @Override

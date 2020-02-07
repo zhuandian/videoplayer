@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_local_video_video"
+        android:text="本地视频"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="#8BC34A" />
+
+    <TextView
+        android:id="@+id/tv_online_video"
+        android:text="在线视频"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="#8BC34A" />
+
+    <TextView
+        android:id="@+id/tv_person"
+        android:text="个人中心"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="#8BC34A" />
 </LinearLayout>

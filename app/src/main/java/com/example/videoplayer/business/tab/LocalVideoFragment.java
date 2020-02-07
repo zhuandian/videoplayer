@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import cn.jzvd.JZVideoPlayer;
 import cn.jzvd.JZVideoPlayerStandard;
 
 /**
@@ -118,6 +119,14 @@ public class LocalVideoFragment extends BaseFragment {
             default: {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
             }
+        }
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (!isVisibleToUser){
+            JZVideoPlayer.releaseAllVideos();
         }
     }
 
