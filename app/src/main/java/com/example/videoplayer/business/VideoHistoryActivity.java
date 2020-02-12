@@ -9,6 +9,7 @@ import com.example.videoplayer.db.VideoDao;
 import com.example.videoplayer.entity.VideoEntity;
 import com.zhuandian.base.BaseActivity;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -33,6 +34,8 @@ public class VideoHistoryActivity extends BaseActivity {
         setTitle("历史记录");
         VideoDao dao = VideoDao.getInstance(this);
         List<VideoEntity> videoList = dao.getVideoList();
+        if (videoList==null) return;
+        Collections.reverse(videoList);
         recyclerView.setAdapter(new OnlineVideoAdapter(videoList, this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

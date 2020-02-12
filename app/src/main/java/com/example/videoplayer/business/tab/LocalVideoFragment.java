@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.videoplayer.R;
@@ -99,7 +100,7 @@ public class LocalVideoFragment extends BaseFragment {
         }
 
         recyclerView.setAdapter(new LocalVideoAdapter(videoEntityList,actitity));
-        recyclerView.setLayoutManager(new GridLayoutManager(actitity,2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(actitity));
     }
 
     @Override

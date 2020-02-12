@@ -15,6 +15,22 @@
         android:src="@drawable/ic_my" />
 
     <TextView
+        android:id="@+id/tv_nick_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_user_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12sp" />
+
+    <TextView
         android:id="@+id/tv_personal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -36,5 +52,47 @@
         android:background="#fff"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
-        android:text="历史记录" />
+        android:text="更多记录" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <com.example.videoplayer.view.MyViedeoPlayer
+            android:id="@+id/videoplayer1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:visibility="gone"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent" />
+
+        <com.example.videoplayer.view.MyViedeoPlayer
+            android:id="@+id/videoplayer2"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:visibility="gone"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#f00"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 </LinearLayout>
