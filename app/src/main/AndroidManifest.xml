@@ -28,7 +28,10 @@
         <activity android:name=".business.login.UserRegisterActivity" />
         <activity android:name=".business.VideoHistoryActivity"/>
         <activity android:name=".business.PersonalDataActivity"/>
-
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.videoplayer.BmobContentProvider">
+        </provider>
     </application>
 
 </manifest>
